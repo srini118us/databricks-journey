@@ -16,7 +16,7 @@
 # MAGIC ## The one line that changes per environment
 # MAGIC
 # MAGIC On personal Free Edition the catalog is `workspace`. On a company
-# MAGIC workspace it may be a named catalog. Change CATALOG here and nowhere else.
+# MAGIC workspace it may be a named catalog. Change CATALOG here and nowhere else
 
 # COMMAND ----------
 
@@ -24,6 +24,7 @@ CATALOG = "workspace"
 SCHEMA = "lakehouse_day1"
 
 print(f"Target: {CATALOG}.{SCHEMA}")
+# git sync test
 
 # COMMAND ----------
 
