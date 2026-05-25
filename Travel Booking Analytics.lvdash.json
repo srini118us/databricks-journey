@@ -1,0 +1,100 @@
+{
+  "datasets": [
+    {
+      "name": "cf080b1a",
+      "displayName": "Monthly Travel Revenue and Bookings Summary",
+      "queryLines": [
+        "USE CATALOG `workspace`;\n",
+        "USE SCHEMA `default`;\n",
+        "\n",
+        "SELECT booking_month, total_revenue, total_bookings\n",
+        "FROM workspace.travel_analytics.gold_monthly_revenue\n",
+        "ORDER BY booking_month"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "5f7aaebb",
+      "displayName": "Revenue Overview",
+      "layout": [
+        {
+          "widget": {
+            "name": "992cef7c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "cf080b1a",
+                  "fields": [
+                    {
+                      "name": "booking_month",
+                      "expression": "`booking_month`"
+                    },
+                    {
+                      "name": "sum(total_revenue)",
+                      "expression": "SUM(`total_revenue`)"
+                    },
+                    {
+                      "name": "sum(total_bookings)",
+                      "expression": "SUM(`total_bookings`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "title": "Travel Booking Analytics",
+                "showTitle": true
+              },
+              "mark": {
+                "layout": "layer"
+              },
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "booking_month",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "sum(total_revenue)",
+                      "displayName": "total_revenue"
+                    },
+                    {
+                      "fieldName": "sum(total_bookings)",
+                      "displayName": "total_bookings"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}

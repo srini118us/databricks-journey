@@ -1,0 +1,75 @@
+{
+  "datasets": [
+    {
+      "name": "695e066a",
+      "displayName": "Untitled dataset",
+      "queryLines": [
+        "USE CATALOG `workspace`;\n",
+        "USE SCHEMA `default`;\n",
+        "\n",
+        "SELECT transaction_date, daily_revenue, transaction_count\n",
+        "FROM workspace.lakehouse_day1.gold_daily_revenue\n",
+        "ORDER BY transaction_date"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "72ae3f4c",
+      "displayName": "Revenue",
+      "layout": [
+        {
+          "widget": {
+            "name": "00d45e12",
+            "queries": [
+              {
+                "name": "879d9a315b5a4c3382a3370f447eb530",
+                "query": {
+                  "datasetName": "695e066a",
+                  "fields": [
+                    {
+                      "name": "column_15144b83103",
+                      "expression": "SUM(`daily_revenue`)"
+                    },
+                    {
+                      "name": "column_15144b83104",
+                      "expression": "SUM(`transaction_count`)"
+                    },
+                    {
+                      "name": "transaction_date",
+                      "expression": "`transaction_date`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 0,
+              "viz_spec": {
+                "display_name": "Visualization 1",
+                "viz_type": "CHART",
+                "serialized_options": "{\"series\":{\"error_y\":{\"type\":\"data\",\"visible\":true},\"stacking\":null},\"coefficient\":1,\"yAxis\":[{\"type\":\"-\"},{\"opposite\":true,\"type\":\"-\"}],\"columnConfigurationMap\":{\"x\":{\"column\":\"transaction_date\",\"id\":\"column_15144b83105\"},\"y\":[{\"column\":\"daily_revenue\",\"id\":\"column_15144b83103\",\"transform\":\"SUM\"},{\"column\":\"transaction_count\",\"id\":\"column_15144b83104\",\"transform\":\"SUM\"}]},\"alignYAxesAtZero\":true,\"direction\":{\"type\":\"counterclockwise\"},\"swappedAxes\":false,\"percentFormat\":\"0[.]00%\",\"textFormat\":\"\",\"legend\":{\"traceorder\":\"normal\"},\"globalSeriesType\":\"line\",\"version\":2,\"sizemode\":\"diameter\",\"seriesOptions\":{\"column_15144b83103\":{\"name\":\"daily_revenue\",\"yAxis\":0},\"column_15144b83104\":{\"name\":\"transaction_count\",\"yAxis\":0}},\"error_y\":{\"type\":\"data\",\"visible\":true},\"sortX\":true,\"showDataLabels\":false,\"missingValuesAsZero\":true,\"useAggregationsUi\":true,\"numberFormat\":\"0,0.[00000]\",\"dateTimeFormat\":\"DD/MM/YYYY HH:mm\",\"sortY\":true,\"valuesOptions\":{},\"xAxis\":{\"labels\":{\"enabled\":true},\"type\":\"-\"}}",
+                "query_name": "879d9a315b5a4c3382a3370f447eb530"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
