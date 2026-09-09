@@ -37,11 +37,6 @@ Numbered execution order. Notebook 00 is the orchestrator that chains the rest.
 - 11 of 18 companies are LOW-confidence (fewer than 100 records)
 - Data pipeline slowdown detected mid-2026 in both major entities (worth investigating with BDC operators)
 
-## Known issues
-
-**Supervisor routing loop** (identified by MLflow tracing + Databricks Genie Code):
-Supervisor LLM occasionally fails to emit FINISH after tasks complete, causing extra rounds until recursion_limit. Detected via Genie Code analysis of MLflow traces. Fix planned: strengthen system prompt with explicit termination signals. Current impact: latency and token cost, not correctness — final answers still valid.
-
 ## Related work
 
 - **[sap-datasphere-portfolio](https://github.com/srini118us/sap-datasphere-portfolio)** — source-side (Datasphere object exports via @sap/datasphere-cli)
