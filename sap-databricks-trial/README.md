@@ -50,3 +50,9 @@ Supervisor LLM occasionally fails to emit FINISH after tasks complete, causing e
 ## Architecture Diagram
 
 ![Architecture](architecture.svg)
+
+## LangGraph Flow (auto-generated from code)
+
+![LangGraph flow](langgraph_flow.png)
+
+Generated at runtime via `multi_agent.get_graph().draw_mermaid_png()` — always matches the compiled graph, including the guardrail node wired before END.
