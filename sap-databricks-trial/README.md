@@ -56,3 +56,11 @@ Supervisor LLM occasionally fails to emit FINISH after tasks complete, causing e
 ![LangGraph flow](langgraph_flow.png)
 
 Auto-generated via `multi_agent.get_graph().draw_mermaid_png()` — always matches the compiled graph including the guardrail node.
+
+## Related SAP Community Reading
+
+- [Need to Know — Beyond SAP Analytics Cloud AI and Using SAP Databricks in SAP Business Data Cloud](https://community.sap.com/t5/technology-blog-posts-by-sap/need-to-know-beyond-sap-analytics-cloud-ai-and-using-sap-databricks-in-sap/ba-p/14416821) — Peter Pearson, SAP
+- [SAP Databricks is the force within SAP BDC to unlock ML/AI capabilities](https://community.databricks.com/t5/technical-blog/sap-databricks-the-force-within-sap-bdc-to-unlock-ml-ai/ba-p/123110) — Krishna_S, Databricks — foundational ai_query on Cash Flow data product
+- [SAP Databricks: Building an Intelligent Enterprise with AI Unleashed](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-databricks-building-an-intelligent-enterprise-with-ai-unleashed-part-1/ba-p/14166813) — Multi-part series, SAP
+
+This project extends the ai_query pattern documented above with multi-agent orchestration (LangGraph), data confidence guards, output honesty enforcement, and MLflow tracing for observability.
