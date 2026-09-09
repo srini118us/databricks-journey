@@ -46,3 +46,7 @@ Supervisor LLM occasionally fails to emit FINISH after tasks complete, causing e
 
 - **[sap-datasphere-portfolio](https://github.com/srini118us/sap-datasphere-portfolio)** — source-side (Datasphere object exports via @sap/datasphere-cli)
 - Prior LinkedIn article on Databricks Agents (Agent Bricks) trust triad pattern
+
+## Architecture Diagram
+
+![Architecture](architecture.svg)
